@@ -59,16 +59,29 @@
       <!-- New Post -->
       <!-- Only show Create Post button if user id is 1 (admin user) -->
     <!-- Create Post Button -->
-{% if current_user.id == 1,2,3,4,5,6 : %}
-<div class="d-flex justify-content-end mb-4 move-center">
-  <a class="btn btn-primary float-right" href="{{ url_for('add_new_post') }}">
-    Create New Post
-  </a>
-</div>
+{% if current_user.is_authenticated %}
+  <div class="d-flex justify-content-end mb-4 move-center">
+    <a class="btn btn-primary float-right" href="{{ url_for('add_new_post') }}">
+      Create New Post
+    </a>
+  </div>
+{% else %}
+  <div class="d-flex justify-content-end mb-4 move-center">
+    <a class="btn btn-secondary" href="{{ url_for('login') }}">
+      Please log in to create a new post
+    </a>
+  </div>
 {% endif %}
 <div class="d-flex justify-content-end mb-4 move-center">
   <a class="btn btn-secondary text-uppercase" href="https://pixabay.com/es/" target="_blank" rel="noopener noreferrer">
     Image resource
   </a>
 </div>
+
+{% if not current_user.is_authenticated %}
+  <div class="text-center mt-3">
+    <p>Don't have an account? <a href="{{ url_for('register') }}">Create one here.</a></p>
+  </div>
+{% endif %}
+
 {% include "footer.html" %}

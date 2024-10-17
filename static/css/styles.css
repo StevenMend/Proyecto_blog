@@ -1,47 +1,37 @@
 @charset "UTF-8";
 .masthead {
-  width: 100%;
-  height: 100vh; /* O una altura específica, como 50vh */
-  background-size: cover; /* Asegura que la imagen cubra todo el elemento */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que se repita la imagen */
-  position: relative; /* Para contenido absoluto dentro si es necesario */
+    width: 100%;
+    height: 100vh; /* O una altura específica, como 50vh */
+    background-size: cover; /* Asegura que la imagen cubra todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    position: relative; /* Para contenido absoluto dentro si es necesario */
 }
 
 /* Para dispositivos móviles */
 @media (max-width: 768px) {
-  .masthead {
-    height: 50vh; /* Ajusta la altura en dispositivos móviles */
-  }
+    .masthead {
+        height: 50vh; /* Ajusta la altura en dispositivos móviles */
+    }
 }
 
-.move-center {
-  justify-content: flex-end;
-  margin-right: 34%;
+.d-flex {
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente al centro */
+    align-items: center; /* Alinea verticalmente al centro si es necesario */
+    flex-direction: column; /* Coloca los elementos en columna */
+    margin-top: 20px; /* Espaciado superior */
 }
 
-@media (max-width: 1400px) {
-  .move-center {
-    margin-right: 33%;
-  }
-}
-
-@media (max-width: 1200px) {
-  .move-center {
-    margin-right: 32%;
-  }
+.btn {
+    width: 200px; /* Ajusta el ancho del botón según tus necesidades */
+    margin: 5px; /* Espaciado entre botones */
 }
 
 @media (max-width: 768px) {
-  .move-center {
-    margin-right: 32%;
-  }
-}
-
-@media (max-width: 576px) {
-  .move-center {
-    margin-right: 30%;
-  }
+    .btn {
+        width: 90%; /* Botones ocupan el 90% del ancho en pantallas pequeñas */
+    }
 }
 
 :root {
